@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org /">
+<head th:replace="fragments::head"></head>
+<body class="container">
+
+<header th:replace="fragments::header"></header>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Asset Class</th>
+    </tr>
+    </thead>
+    <tr th:each="assetclass : ${assetClasses}">
+        <td><a th:text = "${assetClass.name}" th:href="'/funds?assetClassId' + ${assetClass.id}"></td>
+    </tr>
+</table>
+</body>>
+</html>

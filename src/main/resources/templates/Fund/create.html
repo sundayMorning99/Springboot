@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<header th:replace="fragments :: header"></header>
+
+<p th:text="${errorMsg}" style="color:red;"></p>
+
+<form method="post">
+    <div class="form-group">
+        <label>Ticker
+            <input th:field="${fund.ticker}" class="form-control">
+        </label>
+        <p class="error" th:errors="${fund.ticker}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Description
+            <input th:field="${fund.fundDetails.description}" class="form-control">
+        </label>
+        <p class="error" th:errors="${fund.fundDetails.description}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Vendor
+            <input th:field="${fund.fundDetails.vendor}" class="form-control">
+        </label>
+        <p class="error" th:errors="${fund.fundDetails.vendor}"></p>
+    </div>
+
+
+    <div class="form-group">
+        <label>Asset Class
+            <select th:field="${fund.assetClass}">
+                <option th:each="assetClass : ${AssetClasses}"
+                        th:value ="${assetClass.id}" // all caps
+                th:text="${assetClass.name}"> //displayName is more friendly display of class.
+                </option>
+            </select>
+            <p class="error" th:errors="${fund.assetClass}"></p>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success">
+    </div>
+</form>
+</body>
+</html>
