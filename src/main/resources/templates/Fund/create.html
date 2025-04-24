@@ -8,21 +8,21 @@
 <p th:text="${errorMsg}" style="color:red;"></p>
 
 <form method="post">
-    <div class="form-group">
+    <div class="form-group" th:object="${Fund}">
         <label>Ticker
             <input th:field="${fund.ticker}" class="form-control">
         </label>
         <p class="error" th:errors="${fund.ticker}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" th:object="${Fund}">
         <label>Description
             <input th:field="${fund.fundDetails.description}" class="form-control">
         </label>
         <p class="error" th:errors="${fund.fundDetails.description}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" th:object="${Fund}">
         <label>Vendor
             <input th:field="${fund.fundDetails.vendor}" class="form-control">
         </label>
@@ -30,7 +30,7 @@
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group" th:object="${Fund}">
         <label>Asset Class
             <select th:field="${fund.assetClass}">
                 <option th:each="assetClass : ${AssetClasses}"
