@@ -1,7 +1,7 @@
 package org.launchcode.Fund.models;
 
-import javax.persistence.Id;
-import javax.util.Objects;
+import jakarta.persistence.Id;
+import jakarta.util.Objects;
 
 public class AbstractEntity {
 
