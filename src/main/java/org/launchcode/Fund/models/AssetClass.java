@@ -1,9 +1,9 @@
 package org.launchcode.Fund.models;
 
-import javax.validation.Valid;
-import javax.persistence.Entity;
-import javax.validation.NotBlank;
-import javax.validation.Size;
+import jakarta.validation.Valid;
+import jakarta.persistence.Entity;
+import jakarta.validation.NotBlank;
+import jakarta.validation.Size;
 
 @Entity
 public class AssetClass extends AbstractEntity {
